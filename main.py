@@ -23,10 +23,12 @@ while(True):
     if (not nextPos):
         break
 
+    # black
     if (table.getPointType(nextPos[0], nextPos[1])):
         direction = setDirection(direction - 90)
         table.setPointType(nextPos[0], nextPos[1], not table.getPointType(nextPos[0], nextPos[1]))
     
+    # white
     else:
         direction = setDirection(direction + 90)
         table.setPointType(nextPos[0], nextPos[1], table.getPointType(nextPos[0], nextPos[1]))
