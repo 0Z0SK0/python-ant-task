@@ -11,6 +11,11 @@ class Table(object):
                 if ((i + j) % 2):
                     self.setPointType(i, j, True)
 
+    def getPointTypesCount(self):
+        black = np.count_nonzero((self.table == [0, 0, 0]).all(axis=2))
+        white = np.count_nonzero((self.table == [255, 255, 255]).all(axis=2))
+        return (black, white)
+
     def getPointType(self, x, y):
         return False if ((x + y) % 2) else True
 
@@ -41,4 +46,4 @@ class Table(object):
         return (_positionX, _positionY)
 
     def getTable(self):
-        return self.table
+        return np.dot(self.table, [0.2989, 0.5870, 0.1140])
