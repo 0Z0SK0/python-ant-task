@@ -6,8 +6,8 @@ class Table(object):
         self.table = np.zeros((size[0], size[1], 3))
         self.table.fill(255)
 
-        for i in range(0, 12):
-            for j in range(0, 12):
+        for i in range(0, size[0]):
+            for j in range(0, size[1]):
                 if ((i + j) % 2):
                     self.setPointType(i, j, True)
 
