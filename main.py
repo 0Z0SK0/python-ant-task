@@ -36,8 +36,15 @@ while(True):
     startX = nextPos[0]
     startY = nextPos[1]
 
-
-# Output
 result = table.getTable()
+points = table.getPointTypesCount()
+
+# write output
+plt.imsave('out.png', result, cmap='gray', pil_kwargs={'compress_level':0})
+
+# print output
+print(f"Black Pixels - {points[0]}")
+print(f"White Pixels - {points[1]}")
+
 plt.imshow(result)
 plt.show()
